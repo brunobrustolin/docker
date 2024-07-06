@@ -36,6 +36,7 @@ RUN         cd /tmp/ \
 
 ## Configure locale
 RUN         update-locale lang=en_US.UTF-8 \
+            echo en_US.UTF-8 UTF-8 >> /etc/locale.gen \
             && dpkg-reconfigure --frontend noninteractive locales
 
 ## Prepare NSS Wrapper for the entrypoint as a workaround for DayZ requiring a valid UID
